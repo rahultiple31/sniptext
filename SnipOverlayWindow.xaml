@@ -1,0 +1,31 @@
+<Window x:Class="SnipText.SnipOverlayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="False"
+        Background="Black"
+        Topmost="True"
+        ShowInTaskbar="False"
+        Cursor="Cross"
+        KeyDown="Window_KeyDown"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        MouseMove="Window_MouseMove"
+        MouseLeftButtonUp="Window_MouseLeftButtonUp">
+    <Grid>
+        <Image x:Name="ScreenImage" Stretch="Fill"/>
+        <Canvas x:Name="OverlayCanvas" Background="#55000000">
+            <TextBlock Canvas.Left="24"
+                       Canvas.Top="22"
+                       Text="Drag to select. Esc cancels."
+                       Foreground="White"
+                       FontSize="18"
+                       FontWeight="SemiBold"/>
+            <Rectangle x:Name="SelectionRectangle"
+                       Visibility="Collapsed"
+                       Stroke="#2FD3C4"
+                       StrokeThickness="2"
+                       Fill="#22FFFFFF"/>
+        </Canvas>
+    </Grid>
+</Window>
